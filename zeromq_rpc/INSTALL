@@ -1,0 +1,9 @@
+To install zerorpc for Python 3, you must run:
+
+    pip install https://github.com/0rpc/zerorpc-python/archive/python3.4.zip
+
+**NOT**
+
+    pip install zerorpc
+
+Pypi official package has not support for Python 3
