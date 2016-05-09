@@ -23,15 +23,16 @@ def main():
 	p.bind('tcp://127.0.0.1:8080')
 
 	i = 0
-	while True:
-		print('sending %i' % i)
+	# while True:
+	for x in range(100000):
+		print('sending %i' % x)
 
 		# p('test', ('received %i.' % i) * 100000)  # Huge to see memory usage
-		p.test('received %i.' % (i * 100000))  # Huge to see memory usage
+		p.test('received %i.' % (x * 100000))  # Huge to see memory usage
 
-		i += 1
+		# i += 1
 
-		time.sleep(0.1)
+		# time.sleep(0.0001)
 
 
 if __name__ == '__main__':

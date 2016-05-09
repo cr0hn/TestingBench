@@ -1,35 +1,32 @@
 # -*- coding: utf-8 -*-
 
-import random
 import asyncio
 
-import time
 import zmq
 import zmq.asyncio
 
-url = "tcp://*:5000"
+url = "tcp://127.0.0.1:5000"
 
 CHANNEL = b"status"
 
 
 @asyncio.coroutine
 def server_zeromq():
-	print("#")
-	ctx = zmq.asyncio.Context(3)
-	# sock = ctx.socket(zmq.PUB)
+	ctx = zmq.asyncio.Context()
 	sock = ctx.socket(zmq.PUSH)
 
-	sock.bind(url)
+	# sock.bind(url)
+	sock.connect(url)
 
 	i = 0
-	# while True:
-	for x in range(100000):
-		# print("Sent %s" % i)
+	print("[+] Starting server 'Manolo'")
 
-		# yield from sock.send_string(str(random.randint(0, 10000)))
-		yield from sock.send_string(str(x))
+	while True:
+		print("Sent %s" % i)
 
-		# yield from asyncio.sleep(0.0001)
+		yield from sock.send_string("manolo manolo-%s" % str(i))
+
+		yield from asyncio.sleep(0.5)
 
 		i += 10
 
