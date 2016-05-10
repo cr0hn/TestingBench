@@ -239,7 +239,7 @@ if __name__ == '__main__':
 	#
 	# This code build this process-> threads-> asyncio tasks distribution:
 	#
-	#   main -> Process 1 -> Thread 1.1 -> Task 1.1.1
+	#   run_monitor -> Process 1 -> Thread 1.1 -> Task 1.1.1
 	#                                   -> Task 1.1.2
 	#                                   -> Task 1.1.3
 	#

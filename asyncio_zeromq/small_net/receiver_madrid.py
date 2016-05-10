@@ -12,7 +12,6 @@ loop = zmq.asyncio.ZMQEventLoop()
 def recv_and_process():
 
 	ctx = zmq.asyncio.Context()
-
 	sock = ctx.socket(zmq.PULL)
 
 	sock.connect(url)

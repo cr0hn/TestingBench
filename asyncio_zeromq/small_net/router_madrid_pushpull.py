@@ -17,10 +17,6 @@ def proxy_zeromq():
 	sock_in = ctx.socket(zmq.PULL)
 	sock_in.bind(url_in)
 
-	# while True:
-	# 	msg = yield from sock_in.recv()
-	# 	print(msg)
-
 	sock_out = ctx.socket(zmq.PUSH)
 	sock_out.bind(url_out)
 
