@@ -78,7 +78,7 @@ if __name__ == '__main__':
 
 	# Main options
 	parser.add_argument('-m', '--magic', dest="MAGIC", help="preamble for streams.", default="fna349fn")
-	parser.add_argument('-p', '--port', dest="PORT", type=int, help="exchange_url port. Default 50000", default=50000)
+	parser.add_argument('-p', '--port', dest="PORT", type=int, help="producer_url port. Default 50000", default=50000)
 	parser.add_argument("-v", "--verbosity", dest="VERBOSE", action="count", help="verbosity level: -v, -vv, -vvv.",
 	                    default=3)
 

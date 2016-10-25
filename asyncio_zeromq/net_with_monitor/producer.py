@@ -31,7 +31,7 @@ class ProducerWorker(object):
 
 			yield from sock.send_string("producing-%s" % str(i))
 
-			yield from asyncio.sleep(1)
+			yield from asyncio.sleep(0.0001)
 
 			i += 10
 

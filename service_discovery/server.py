@@ -93,10 +93,10 @@ if __name__ == '__main__':
 	example = """
 Examples:
 
-	Put server to exchange_url and return the Service Register Server IP:
+	Put server to producer_url and return the Service Register Server IP:
 	%(name)s -d 10.0.0.1
 
-	Put server exchange_url and return various Services Registers Servers:
+	Put server producer_url and return various Services Registers Servers:
 	%(name)s -d 10.0.0.1,192.168.1.1
 
 	Increase verbosity:
@@ -138,8 +138,8 @@ appropriate error to the client.
 	gr_options = parser.add_argument_group("more options")
 	parser.add_argument('-m', '--magic', dest="MAGIC", help="preamble for streams.", default="fna349fn")
 	gr_options.add_argument('--password', dest="PASSWORD", help="server access password. Default None", default=None)
-	parser.add_argument('-p', '--port', dest="PORT", type=int, help="exchange_url port. Default 50000", default=50000)
-	parser.add_argument('-l', '--exchange_url', dest="IP", help="exchange_url IP. Default 0.0.0.0", default="0.0.0.0")
+	parser.add_argument('-p', '--port', dest="PORT", type=int, help="producer_url port. Default 50000", default=50000)
+	parser.add_argument('-l', '--producer_url', dest="IP", help="producer_url IP. Default 0.0.0.0", default="0.0.0.0")
 	parser.add_argument('--disable-hidden', dest="NO_HIDDEN", action="store_true", help="disable hidden mode", default=False)
 
 	parsed_args = parser.parse_args()

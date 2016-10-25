@@ -12,7 +12,7 @@ class ReceiverWorker(object):
 
 	def __init__(self, producer_url, monitor_url, loop=None):
 		self.monitor_url = monitor_url
-		self.exchange_url = producer_url
+		self.producer_url = producer_url
 		self.loop = loop or zmq.asyncio.ZMQEventLoop()
 
 	@asyncio.coroutine
@@ -46,7 +46,7 @@ class ReceiverWorker(object):
 		ctx = zmq.asyncio.Context()
 		sock = ctx.socket(zmq.PULL)
 
-		sock.connect(self.exchange_url)
+		sock.connect(self.producer_url)
 
 		print("[*] Starting receiver")
 
